@@ -30,3 +30,7 @@ Thumbs.db
 ## Python cache
 __pycache__/
 *.pyc
+
+## Release artifacts
+dist/
+*.zip
