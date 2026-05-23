@@ -21,13 +21,19 @@
 % ====================================
 % 字体
 % ====================================
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
-\setCJKmainfont{SimSun}
-\setCJKsansfont{SimHei}
-\setCJKfamilyfont{hei}{SimHei}
-\setCJKfamilyfont{kai}{KaiTi}
-\setCJKfamilyfont{fs}{FangSong}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{TeX Gyre Heros}}
+
+\IfFontExistsTF{SimSun}
+  {\setCJKmainfont{SimSun}}
+  {\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}}{\setCJKmainfont{FandolSong-Regular}}}
+\IfFontExistsTF{SimHei}
+  {\setCJKsansfont{SimHei}\setCJKfamilyfont{hei}{SimHei}}
+  {\IfFontExistsTF{Noto Sans CJK SC}
+    {\setCJKsansfont{Noto Sans CJK SC}\setCJKfamilyfont{hei}{Noto Sans CJK SC}}
+    {\setCJKsansfont{FandolHei-Regular}\setCJKfamilyfont{hei}{FandolHei-Regular}}}
+\IfFontExistsTF{KaiTi}{\setCJKfamilyfont{kai}{KaiTi}}{\setCJKfamilyfont{kai}{FandolKai-Regular}}
+\IfFontExistsTF{FangSong}{\setCJKfamilyfont{fs}{FangSong}}{\setCJKfamilyfont{fs}{FandolFang-Regular}}
 
 % ====================================
 % 行距

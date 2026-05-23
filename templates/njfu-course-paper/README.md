@@ -1,13 +1,13 @@
 # NJFU 课程论文 LaTeX 模板
 
-南京林业大学课程论文 / 实验报告 LaTeX 模板，基于 ctexart + XeLaTeX。
+南京林业大学课程论文 LaTeX 模板，基于 ctexart + XeLaTeX。
 
 ## 特性
 
 - **模块化结构**：主控文件仅 ~30 行，正文按章节拆分
 - **格式与内容分离**：样式（NJFUReport.sty）独立，自定义命令集中管理
 - **封面自动生成**：修改 `main.tex` 中基本信息即可
-- **中文适配**：宋体正文、黑体标题、Times New Roman 英文
+- **中文适配**：Windows 默认宋体/黑体，其他系统自动尝试 Noto CJK / Fandol
 - **参考文献**：BibTeX 管理
 
 ## 目录结构
@@ -28,8 +28,7 @@
 ## 前置条件
 
 - TeX Live 2024+ 或 MiKTeX
-- **Windows 中文字体**（SimSun, SimHei, KaiTi, FangSong）
-- macOS/Linux 用户需自行配置中文字体
+- 中文字体：Windows 可直接使用，macOS/Linux 推荐安装 Noto CJK
 
 ## 快速开始
 

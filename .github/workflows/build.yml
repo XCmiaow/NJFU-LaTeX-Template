@@ -15,12 +15,8 @@ jobs:
       - name: Install TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-bibtex-extra
+          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-bibtex-extra texlive-science texlive-lang-chinese fonts-noto-cjk
           sudo apt-get install -y latexmk
-
-      - name: Install missing packages
-        run: |
-          sudo tlmgr install diagbox pict2e ifoddpage needspace relsize appendix algorithm2e
 
       - name: Build main document
         run: latexmk -xelatex main.tex
@@ -42,12 +38,8 @@ jobs:
       - name: Install TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-bibtex-extra
+          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-bibtex-extra texlive-science texlive-lang-chinese fonts-noto-cjk
           sudo apt-get install -y latexmk
-
-      - name: Install missing packages
-        run: |
-          sudo tlmgr install diagbox pict2e ifoddpage needspace relsize appendix algorithm2e
 
       - name: Build ${{ matrix.template }}
         working-directory: templates/${{ matrix.template }}

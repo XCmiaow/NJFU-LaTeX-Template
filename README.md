@@ -1,9 +1,9 @@
 # NJFU-LaTeX-Template — 南京林业大学课程论文 LaTeX 模板
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Build](https://github.com/yourname/NJFU-LaTeX-Template/actions/workflows/build.yml/badge.svg)](https://github.com/yourname/NJFU-LaTeX-Template/actions/workflows/build.yml)
+[![Build](https://github.com/XCmiaow/NJFU-LaTeX-Template/actions/workflows/build.yml/badge.svg)](https://github.com/XCmiaow/NJFU-LaTeX-Template/actions/workflows/build.yml)
 
-南林课程论文 / 实验报告 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
+南林课程论文 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
 
 ## 概览
 
@@ -40,10 +40,10 @@
 | TeX Live 2024+ / MiKTeX | 推荐 TeX Live |
 | XeLaTeX | 主编译器 |
 | BibTeX | 参考文献处理 |
-| **Windows 字体** | SimSun, SimHei, KaiTi, FangSong |
+| 中文字体 | Windows 默认使用 SimSun, SimHei, KaiTi, FangSong；其他系统自动尝试 Noto CJK / Fandol |
 
-> **macOS/Linux 用户**：本模板默认使用 Windows 中文字体。非 Windows 系统需自行配置
-> 中文字体，或修改 `NJFUReport.sty` 中的 `\setCJKmainfont` 为系统可用字体。
+> **macOS/Linux 用户**：推荐安装 Noto CJK 字体。模板会自动尝试常见字体，
+> 如果仍找不到中文字体，再修改 `NJFUReport.sty` 中的字体配置。
 
 ### 必备宏包
 
@@ -59,7 +59,7 @@
 
 ### Overleaf（在线，推荐）
 
-1. 下载模板：`https://github.com/yourname/NJFU-LaTeX-Template/archive/refs/heads/main.zip`
+1. 下载模板：`https://github.com/XCmiaow/NJFU-LaTeX-Template/archive/refs/heads/main.zip`
 2. 打开 [Overleaf](https://www.overleaf.com/)，**New Project → Upload Project**，选择 zip 文件
 3. 在 Overleaf 的 **Menu → Compiler** 中选择 **XeLaTeX**
 4. 修改 `main.tex` 中的个人信息，开始写作
