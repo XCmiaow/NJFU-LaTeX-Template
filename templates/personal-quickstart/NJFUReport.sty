@@ -32,8 +32,12 @@
   {\IfFontExistsTF{Noto Sans CJK SC}
     {\setCJKsansfont{Noto Sans CJK SC}\setCJKfamilyfont{hei}{Noto Sans CJK SC}}
     {\setCJKsansfont{FandolHei-Regular}\setCJKfamilyfont{hei}{FandolHei-Regular}}}
-\IfFontExistsTF{KaiTi}{\setCJKfamilyfont{kai}{KaiTi}}{\setCJKfamilyfont{kai}{FandolKai-Regular}}
-\IfFontExistsTF{FangSong}{\setCJKfamilyfont{fs}{FangSong}}{\setCJKfamilyfont{fs}{FandolFang-Regular}}
+\IfFontExistsTF{KaiTi}
+  {\setCJKfamilyfont{kai}{KaiTi}}
+  {\IfFontExistsTF{Noto Serif CJK SC}{\setCJKfamilyfont{kai}{Noto Serif CJK SC}}{\setCJKfamilyfont{kai}{FandolSong-Regular}}}
+\IfFontExistsTF{FangSong}
+  {\setCJKfamilyfont{fs}{FangSong}}
+  {\IfFontExistsTF{Noto Serif CJK SC}{\setCJKfamilyfont{fs}{Noto Serif CJK SC}}{\setCJKfamilyfont{fs}{FandolSong-Regular}}}
 
 % ====================================
 % 行距
