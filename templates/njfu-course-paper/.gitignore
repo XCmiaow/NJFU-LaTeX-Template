@@ -1,0 +1,28 @@
+## Build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+*.dvi
+*.ps
+
+## Published PDF (not tracked)
+*.pdf
+
+## Editor
+.vscode/
+.texcount
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Claude
+.claude/
+.memory/

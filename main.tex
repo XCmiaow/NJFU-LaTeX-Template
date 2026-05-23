@@ -1,0 +1,39 @@
+%!TeX program = xelatex
+\documentclass[12pt,hyperref,a4paper,UTF8]{ctexart}
+\usepackage{NJFUReport}
+\usepackage{enumitem}
+
+\input{settings/commands}
+
+% ===================== 基本信息 =====================
+\newcommand{\papertitle}{绿织巢岸，韧守水脉
+    —— 论环巢湖湿地植被的危机破解与生态福祉}
+\newcommand{\coursename}{湿地保护}
+\newcommand{\collegename}{化学工程学院}
+\newcommand{\majorname}{林产化工}
+\newcommand{\studentid}{2410407105}
+\newcommand{\authorname}{方绪杰}
+\newcommand{\teachername}{程虎}
+\renewcommand{\reportheader}{\coursename 课程研究报告}
+
+%%-------------------------------正文开始---------------------------%%
+\begin{document}
+
+\input{frontmatter/cover}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\input{frontmatter/abstract}
+\newpage
+
+\input{sections/1-introduction}
+\input{sections/2-community}
+\input{sections/3-ecology}
+\input{sections/4-threats}
+\input{sections/5-conclusion}
+
+\reference
+
+\end{document}

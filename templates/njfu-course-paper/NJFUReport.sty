@@ -1,0 +1,138 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{NJFUReport}[2024/06/20 NJFU Report Template]
+
+% 报表头（可在 main.tex 中用 \renewcommand 修改）
+\newcommand{\reportheader}{南京林业大学课程论文}
+
+% 盲审模式开关：在 main.tex 中 \blindreviewtrue 启用
+\newif\ifblindreview
+\blindreviewfalse
+
+% ====================================
+% 基础宏包
+% ====================================
+\RequirePackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+\RequirePackage{latexsym,amssymb,amsmath,amsbsy,amsopn,amstext,amsthm,amsxtra}
+\RequirePackage{graphicx,enumerate,fancyhdr,listings,multirow,makeidx,xcolor}
+\RequirePackage{fontspec,pythonhighlight,tcolorbox}
+\PassOptionsToPackage{hyphens}{url}
+\RequirePackage[unicode=true,colorlinks,urlcolor=black,linkcolor=black,bookmarksnumbered]{hyperref}
+
+% ====================================
+% 字体
+% ====================================
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{fs}{FangSong}
+
+% ====================================
+% 行距
+% ====================================
+\linespread{1.5}
+
+% ====================================
+% 超链接
+% ====================================
+\hypersetup{
+    citecolor=black,
+    pdfstartview=FitH,
+    breaklinks=true
+}
+
+% ====================================
+% 中文交叉引用名
+% ====================================
+\def\equationautorefname{式}
+\def\figureautorefname{图}
+\def\tableautorefname{表}
+\def\sectionautorefname{节}
+\def\subsectionautorefname{小节}
+\def\appendixautorefname{附录}
+
+% ====================================
+% 定理环境
+% ====================================
+\newtheorem{Theorem}{定理}[section]
+\newtheorem{Lemma}[Theorem]{引理}
+\newtheorem{Corollary}[Theorem]{推论}
+\newtheorem{Proposition}[Theorem]{命题}
+\newtheorem{Definition}[Theorem]{定义}
+\newtheorem{Example}[Theorem]{例}
+
+% ====================================
+% 页眉
+% ====================================
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[C]{\CJKfamily{fs} \reportheader}
+\fancyhead[R]{}
+
+% ====================================
+% 三线表（CUMCM 通用风格）
+% ====================================
+\RequirePackage{tabularx,booktabs,array}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\BeforeBeginEnvironment{tabular}{\zihao{-5}}
+
+% ====================================
+% 数学算子与公式间距
+% ====================================
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\sgn}{sgn}
+\setlength{\abovedisplayskip}{1pt}
+\setlength{\belowdisplayskip}{1pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\setlength{\jot}{0pt}
+
+% ====================================
+% 辅助宏包
+% ====================================
+\RequirePackage{diagbox}
+\RequirePackage{subcaption}
+\RequirePackage{tikz}
+\RequirePackage{pifont}
+\RequirePackage[ruled,linesnumbered]{algorithm2e}
+\SetKwInput{KwInput}{输入}
+\SetKwInput{KwOutput}{输出}
+\SetKwProg{Proc}{Procedure}{}{}
+\RequirePackage{empheq}
+\RequirePackage{appendix}
+
+% ====================================
+% 封面辅助命令
+% ====================================
+\makeatletter
+\newcommand\dlmu[2][4cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
+\makeatother
+
+% ====================================
+% 参考文献输出
+% ====================================
+\newcommand{\reference}{%
+    \bibliographystyle{unsrt}%
+    \begin{center}%
+        \bibliography{reference}%
+    \end{center}%
+}
+
+% ====================================
+% 英文摘要
+% ====================================
+\newenvironment{enabstract}
+  {\begin{center}\textbf{\large Abstract}\end{center}\par\ignorespaces}
+  {\par\medskip}
+
+% ====================================
+% 自定义命令
+% ====================================
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt] (char) {#1};}}

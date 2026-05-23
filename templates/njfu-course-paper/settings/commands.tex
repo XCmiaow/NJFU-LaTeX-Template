@@ -1,0 +1,19 @@
+% ====================================
+% 自定义命令
+% ====================================
+
+% 彩色文本框
+\newcommand{\tbox}[1]{%
+    \begin{center}
+        \begin{tcolorbox}[
+            colback=gray!10,
+            colframe=black,
+            width=8cm,
+            arc=1mm,
+            auto outer arc,
+            boxrule=0.5pt
+        ]
+            {#1}
+        \end{tcolorbox}
+    \end{center}
+}

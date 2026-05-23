@@ -1,0 +1,47 @@
+% !TEX program = xelatex
+%
+% NJFU 课程论文模板
+% ==================
+% 使用方法：
+%   1. 修改下方的「基本信息」（姓名、学号、课程等）
+%   2. 在 sections/ 中撰写各章节内容
+%   3. 在 references/refs.bib 中添加参考文献
+%   4. 编译：xelatex → bibtex → xelatex → xelatex
+%
+% ==========================================
+\documentclass[12pt,hyperref,a4paper,UTF8]{ctexart}
+\usepackage{NJFUReport}
+\usepackage{enumitem}
+
+\input{settings/commands}
+
+% ===================== 基本信息 =====================
+% 盲审模式：取消注释下行可隐藏姓名、学号、教师
+% % \blindreviewtrue
+
+\newcommand{\papertitle}{论文题目}
+\newcommand{\coursename}{课程名称}
+\newcommand{\collegename}{学院}
+\newcommand{\majorname}{专业}
+\newcommand{\studentid}{学号}
+\newcommand{\authorname}{姓名}
+\newcommand{\teachername}{授课教师}
+\renewcommand{\reportheader}{\coursename}
+
+\begin{document}
+
+\input{frontmatter/cover}
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\input{frontmatter/abstract}
+\newpage
+
+\input{sections/1-example}
+
+\reference
+
+\end{document}
