@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v0.1.0 - 2026-05-23
 
 - Keep the project focused on NJFU course papers.
 - Fix public repository links in the README.
