@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check template style synchronization
+        shell: pwsh
+        run: ./scripts/check-style-sync.ps1
+
       - name: Install TeX Live
         run: |
           sudo apt-get update

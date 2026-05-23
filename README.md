@@ -5,6 +5,12 @@
 
 南林课程论文 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
 
+## 适用范围
+
+本项目面向南京林业大学课程论文写作，适合课程作业、课程结课论文、课程设计说明文档等轻量论文场景。
+
+本项目不是学校官方模板，也不是毕业论文、学位论文、开题报告或其他正式培养环节材料的模板。提交前请以任课教师、学院或学校发布的具体格式要求为准。
+
 ## 概览
 
 本仓库包含：
@@ -59,10 +65,12 @@
 
 ### Overleaf（在线，推荐）
 
-1. 下载模板：`https://github.com/XCmiaow/NJFU-LaTeX-Template/archive/refs/heads/main.zip`
+1. 下载稳定版 Overleaf 模板：`https://github.com/XCmiaow/NJFU-LaTeX-Template/releases/download/v0.1.1/njfu-course-paper-v0.1.1-overleaf.zip`
 2. 打开 [Overleaf](https://www.overleaf.com/)，**New Project → Upload Project**，选择 zip 文件
 3. 在 Overleaf 的 **Menu → Compiler** 中选择 **XeLaTeX**
 4. 修改 `main.tex` 中的个人信息，开始写作
+
+完整源码包和示例 PDF 可在 [Releases](https://github.com/XCmiaow/NJFU-LaTeX-Template/releases) 下载。
 
 ### 本地编译
 
@@ -137,6 +145,7 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 
 ## 文档
 
+- [使用手册](docs/manual.md)
 - [FAQ](docs/faq.md)
 - [故障排查](docs/troubleshooting.md)
 - [发布流程](docs/release.md)
