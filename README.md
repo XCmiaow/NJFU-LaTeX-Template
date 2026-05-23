@@ -140,6 +140,7 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 - [FAQ](docs/faq.md)
 - [故障排查](docs/troubleshooting.md)
 - [发布流程](docs/release.md)
+- [开发路线图](docs/roadmap.md)
 
 ## 维护说明
 
