@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.1 - 2026-05-23
+
+- Fix CJK font fallbacks for Linux CI environments without Windows KaiTi and FangSong fonts.
+- Keep template style copies synchronized across the root example and starter templates.
+
 ## v0.1.0 - 2026-05-23
 
 - Keep the project focused on NJFU course papers.
