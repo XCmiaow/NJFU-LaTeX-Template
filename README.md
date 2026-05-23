@@ -6,6 +6,10 @@
 
 南林课程论文 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
 
+<p align="center">
+  <img src="docs/preview.png" alt="Preview" width="65%">
+</p>
+
 ## 适用范围
 
 本项目面向南京林业大学课程论文写作，适合课程作业、课程结课论文、课程设计说明文档等轻量论文场景。
@@ -46,7 +50,7 @@
 ## 前置条件
 
 | 依赖 | 说明 |
-|------|------|
+| --- | --- |
 | TeX Live 2024+ / MiKTeX | 推荐 TeX Live |
 | XeLaTeX | 主编译器 |
 | BibTeX | 参考文献处理 |
@@ -60,7 +64,7 @@
 以下宏包由 `NJFUReport.sty` 自动加载，需确保 TeX 发行版已安装：
 
 | 宏包 | 用途 | 安装（如缺失） |
-|------|------|---------------|
+| --- | --- | --- |
 | `diagbox` | 表格斜线 | `tlmgr install diagbox pict2e` |
 | `algorithm2e` | 伪代码 | `tlmgr install algorithm2e ifoddpage needspace relsize` |
 | `appendix` | 附录 | `tlmgr install appendix` |
@@ -110,7 +114,7 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 ## 特性
 
 | 特性 | 说明 |
-|------|------|
+| --- | --- |
 | **模块化架构** | 样式（`.sty`）与内容（`.tex`）完全分离 |
 | **封面自动生成** | 修改 `main.tex` 基本信息即可 |
 | **中文适配** | 宋体正文、黑体标题、楷体封面、仿宋页眉 |

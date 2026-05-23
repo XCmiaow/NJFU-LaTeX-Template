@@ -4,11 +4,12 @@
 
 ## Current Version
 
-`v0.1.1` 是课程论文模板的当前稳定版本，目标是让用户可以直接下载、编译、改信息、写正文。
+`v1.0.0` 是课程论文模板的当前稳定版本。
 
 已完成：
 
 - 课程论文模板定位。
+- 核心样式宏包 NJFUReport.sty（三线表、算法、定理、盲审、英文摘要、TikZ 等）。
 - 根目录示例与 `templates/njfu-course-paper` 模板。
 - `templates/personal-quickstart` 快速开写模板。
 - XeLaTeX 本地编译、CI 编译、发布打包流程。
