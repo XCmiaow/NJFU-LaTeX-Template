@@ -141,6 +141,10 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 - [故障排查](docs/troubleshooting.md)
 - [发布流程](docs/release.md)
 
+## 维护说明
+
+`templates/*/NJFUReport.sty` 会保留为独立副本，目的是让每个模板目录都能单独上传到 Overleaf。修改根目录 `NJFUReport.sty` 后，需要同步更新模板目录里的副本。
+
 ## License
 
 MIT
