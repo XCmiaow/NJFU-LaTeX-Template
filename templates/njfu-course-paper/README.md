@@ -84,6 +84,10 @@ xelatex main.tex
 }
 ```
 
+## 更多文档
+
+完整仓库包含 FAQ、故障排查和发布流程文档，路径为 `docs/`。
+
 ## License
 
 MIT

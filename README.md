@@ -135,6 +135,12 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 | 添加宏包 | 在 `main.tex` 导言区 `\usepackage{xxx}` |
 | 自定义命令 | 在 `settings/commands.tex` 中添加 |
 
+## 文档
+
+- [FAQ](docs/faq.md)
+- [故障排查](docs/troubleshooting.md)
+- [发布流程](docs/release.md)
+
 ## License
 
 MIT
