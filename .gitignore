@@ -14,6 +14,7 @@
 
 ## Published PDF (tracked in releases only)
 *.pdf
+!example.pdf
 
 ## Editor
 .vscode/

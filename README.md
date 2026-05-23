@@ -1,6 +1,7 @@
 # NJFU-LaTeX-Template — 南京林业大学课程论文 LaTeX 模板
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![TeX Live](https://img.shields.io/badge/TeX%20Live-2026-blue)](https://tug.org/texlive/)
 [![Build](https://github.com/XCmiaow/NJFU-LaTeX-Template/actions/workflows/build.yml/badge.svg)](https://github.com/XCmiaow/NJFU-LaTeX-Template/actions/workflows/build.yml)
 
 南林课程论文 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
@@ -17,7 +18,10 @@
 
 - **NJFUReport.sty** — 核心样式宏包（字体、页眉、三线表、数学环境、算法、附录等）
 - **templates/** — 开箱即用的模板项目，可直接用于写论文
-- 一份完整的示例论文，展示模板的全部特性
+- **example.pdf** — 编译好的示例文档，下载前预览效果
+- 一份完整的示例论文（[main.tex](main.tex)），展示模板的全部特性
+
+> 📖 想看看效果？直接下载根目录的 [example.pdf](example.pdf)，7 页全特性演示。
 
 ## 目录结构
 
@@ -65,7 +69,7 @@
 
 ### Overleaf（在线，推荐）
 
-1. 下载稳定版 Overleaf 模板：`https://github.com/XCmiaow/NJFU-LaTeX-Template/releases/download/v0.1.1/njfu-course-paper-v0.1.1-overleaf.zip`
+1. 下载 [Overleaf 模板包](https://github.com/XCmiaow/NJFU-LaTeX-Template/releases)（`*-overleaf.zip`）
 2. 打开 [Overleaf](https://www.overleaf.com/)，**New Project → Upload Project**，选择 zip 文件
 3. 在 Overleaf 的 **Menu → Compiler** 中选择 **XeLaTeX**
 4. 修改 `main.tex` 中的个人信息，开始写作
@@ -83,7 +87,7 @@ cd /path/to/my-paper
 latexmk -xelatex main.tex
 ```
 
-也可以使用仓库提供的快捷命令：
+也支持使用 `make` 或 `Compile.ps1`：
 
 ```bash
 make all
@@ -154,6 +158,14 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 ## 维护说明
 
 `templates/*/NJFUReport.sty` 会保留为独立副本，目的是让每个模板目录都能单独上传到 Overleaf。修改根目录 `NJFUReport.sty` 后，需要同步更新模板目录里的副本。
+
+## 贡献
+
+欢迎提交 Issue 和 PR！
+
+- Bug 报告：使用 [Bug 报告模板](.github/ISSUE_TEMPLATE/01-bug-report.md)
+- 功能建议：使用 [功能建议模板](.github/ISSUE_TEMPLATE/02-feature-request.md)
+- 代码贡献：确保 NJFUReport.sty 三份副本同步，所有模板编译通过
 
 ## License
 
