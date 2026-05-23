@@ -48,6 +48,18 @@
 latexmk -xelatex main.tex
 ```
 
+如果从完整仓库根目录使用，也可以运行：
+
+```bash
+make template
+```
+
+Windows PowerShell：
+
+```powershell
+.\Compile.ps1 template
+```
+
 或手动四步：
 
 ```bash

@@ -75,6 +75,20 @@ cd /path/to/my-paper
 latexmk -xelatex main.tex
 ```
 
+也可以使用仓库提供的快捷命令：
+
+```bash
+make all
+make clean
+```
+
+Windows PowerShell：
+
+```powershell
+.\Compile.ps1 all
+.\Compile.ps1 clean
+```
+
 或手动编译：
 
 ```bash
