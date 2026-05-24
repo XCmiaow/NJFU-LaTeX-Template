@@ -31,6 +31,12 @@ jobs:
           name: main.pdf
           path: main.pdf
 
+      - name: Validate release packaging
+        shell: pwsh
+        run: |
+          ./scripts/package-release.ps1 v0.0.0
+          ./scripts/check-release-assets.ps1 v0.0.0
+
   build-templates:
     runs-on: ubuntu-latest
     strategy:

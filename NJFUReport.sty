@@ -83,6 +83,38 @@
 \fancyhead[R]{}
 
 % ====================================
+% 目录样式
+% ====================================
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{目录}
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \thispagestyle{empty}%
+  \section*{\centering\CJKfamily{hei}\zihao{2}\bfseries\contentsname}%
+  \vspace{0.8cm}%
+  \@starttoc{toc}%
+  \thispagestyle{empty}%
+}
+\renewcommand*\l@section[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty\@secpenalty
+    \addvspace{0.6em \@plus\p@}%
+    \setlength\@tempdima{2em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \CJKfamily{hei}\zihao{4}\bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\m@th\mkern 2mu.\mkern 2mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2em}{3em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{4em}{4em}}
+\makeatother
+
+% ====================================
 % 三线表（CUMCM 通用风格）
 % ====================================
 \RequirePackage{tabularx,booktabs,array}

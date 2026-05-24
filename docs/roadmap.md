@@ -4,7 +4,7 @@
 
 ## Current Version
 
-`v1.0.1` 是课程论文模板的当前稳定版本。
+`v1.1.0` 是课程论文模板的当前稳定版本。
 
 已完成：
 
@@ -12,7 +12,9 @@
 - 核心样式宏包 NJFUReport.sty（三线表、算法、定理、盲审、英文摘要、TikZ 等）。
 - 根目录示例与 `templates/njfu-course-paper` 模板。
 - `templates/personal-quickstart` 快速开写模板。
+- 参考常见南林课程论文版式的封面和目录样式。
 - XeLaTeX 本地编译、CI 编译、发布打包流程。
+- CI 中的 release 打包与资产洁净度校验。
 - FAQ、故障排查、发布流程文档。
 
 ## Next Priorities
@@ -27,7 +29,7 @@
 2. 强化模板一致性。
    - 建立根目录样式与 `templates/*/NJFUReport.sty` 的同步检查。
    - 固定模板目录内的最小可编译文件集合。
-   - 检查封面、摘要、目录、正文、参考文献、附录的默认排版一致性。
+   - 继续检查摘要、正文、参考文献、附录的默认排版一致性。
 
 3. 优化 Overleaf 体验。
    - 让 release 中的 Overleaf zip 保持最小、清爽、可直接上传。
@@ -47,7 +49,7 @@
 - 更完整的参考文献样式说明。
 - 自动截图或 PDF 预览检查。
 - 模板 gallery 和截图展示。
-- 更严格的 lint 与 release 校验脚本。
+- 更严格的 lint 规则。
 
 ## Version Policy
 

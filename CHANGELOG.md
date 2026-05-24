@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0 - 2026-05-24
+
+- Refine the course paper cover and table of contents to match common NJFU course paper layout.
+- Add CI validation for release packaging and asset cleanliness.
+- Make release packaging paths more portable across PowerShell environments.
+
 ## v1.0.1 - 2026-05-24
 
 - Rebuild clean release assets from the latest `main` branch.
