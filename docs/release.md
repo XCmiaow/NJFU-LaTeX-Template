@@ -11,9 +11,10 @@ This project uses semantic version tags while the template is maturing.
 5. Commit all release changes.
 6. Create release assets with `.\scripts\package-release.ps1 vX.Y.Z`.
 7. Verify release assets with `.\scripts\check-release-assets.ps1 vX.Y.Z`.
-8. Tag with `git tag -a vX.Y.Z -m "Release vX.Y.Z"`.
-9. Push `main` and tags.
-10. Create a GitHub Release and upload files from `dist/`.
+8. Confirm `dist/` contains only the four release assets.
+9. Tag with `git tag -a vX.Y.Z -m "Release vX.Y.Z"`.
+10. Push `main` and tags.
+11. Create a GitHub Release and upload files from `dist/`.
 
 ## Version Rules
 

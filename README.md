@@ -1,7 +1,7 @@
 # NJFU-LaTeX-Template — 南京林业大学课程论文 LaTeX 模板
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![TeX Live](https://img.shields.io/badge/TeX%20Live-2026-blue)](https://tug.org/texlive/)
+[![TeX Live](https://img.shields.io/badge/TeX%20Live-2024%2B-blue)](https://tug.org/texlive/)
 [![Build](https://github.com/XCmiaow/NJFU-LaTeX-Template/actions/workflows/build.yml/badge.svg)](https://github.com/XCmiaow/NJFU-LaTeX-Template/actions/workflows/build.yml)
 
 南林课程论文 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
