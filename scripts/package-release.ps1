@@ -14,6 +14,39 @@ $OverleafDir = Join-Path $Stage "njfu-course-paper-$Version-overleaf"
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $Dist
 New-Item -ItemType Directory -Force $FullDir, $OverleafDir | Out-Null
 
+function New-ZipFromDirectory {
+  param(
+    [Parameter(Mandatory=$true)]
+    [string]$SourceDir,
+    [Parameter(Mandatory=$true)]
+    [string]$DestinationPath
+  )
+
+  Add-Type -AssemblyName System.IO.Compression
+  Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+  Remove-Item -Force -ErrorAction SilentlyContinue $DestinationPath
+  $sourceRoot = (Resolve-Path $SourceDir).Path
+  $zip = [System.IO.Compression.ZipFile]::Open($DestinationPath, [System.IO.Compression.ZipArchiveMode]::Create)
+  try {
+    Get-ChildItem $sourceRoot -Force -Recurse -File | ForEach-Object {
+      $relative = $_.FullName.Substring($sourceRoot.Length).TrimStart([char[]]@(
+        [System.IO.Path]::DirectorySeparatorChar,
+        [System.IO.Path]::AltDirectorySeparatorChar
+      ))
+      $entryName = $relative -replace '\\', '/'
+      [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+        $zip,
+        $_.FullName,
+        $entryName,
+        [System.IO.Compression.CompressionLevel]::Optimal
+      ) | Out-Null
+    }
+  } finally {
+    $zip.Dispose()
+  }
+}
+
 $exclude = @('.git', 'dist')
 Get-ChildItem $Root -Force | Where-Object { $exclude -notcontains $_.Name } | ForEach-Object {
   Copy-Item $_.FullName -Destination $FullDir -Recurse -Force
@@ -54,11 +87,8 @@ foreach ($dir in @($FullDir, $OverleafDir)) {
   }
 }
 
-$fullArchiveItems = @(Get-ChildItem $FullDir -Force | ForEach-Object { $_.FullName })
-$overleafArchiveItems = @(Get-ChildItem $OverleafDir -Force | ForEach-Object { $_.FullName })
-
-Compress-Archive -LiteralPath $fullArchiveItems -DestinationPath (Join-Path $Dist "NJFU-LaTeX-Template-$Version.zip") -Force
-Compress-Archive -LiteralPath $overleafArchiveItems -DestinationPath (Join-Path $Dist "njfu-course-paper-$Version-overleaf.zip") -Force
+New-ZipFromDirectory -SourceDir $FullDir -DestinationPath (Join-Path $Dist "NJFU-LaTeX-Template-$Version.zip")
+New-ZipFromDirectory -SourceDir $OverleafDir -DestinationPath (Join-Path $Dist "njfu-course-paper-$Version-overleaf.zip")
 
 Remove-Item -Recurse -Force $Stage
 
