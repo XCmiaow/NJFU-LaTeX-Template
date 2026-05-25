@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix release packaging on Linux so the full source zip includes dot-directories such as `.github/`.
+
 ## v1.2.0 - 2026-05-25
 
 - Strengthen CI with template structure checks and updated GitHub Actions versions.

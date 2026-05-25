@@ -54,8 +54,11 @@ foreach ($dir in @($FullDir, $OverleafDir)) {
   }
 }
 
-Compress-Archive -Path (Join-Path $FullDir '*') -DestinationPath (Join-Path $Dist "NJFU-LaTeX-Template-$Version.zip") -Force
-Compress-Archive -Path (Join-Path $OverleafDir '*') -DestinationPath (Join-Path $Dist "njfu-course-paper-$Version-overleaf.zip") -Force
+$fullArchiveItems = @(Get-ChildItem $FullDir -Force | ForEach-Object { $_.FullName })
+$overleafArchiveItems = @(Get-ChildItem $OverleafDir -Force | ForEach-Object { $_.FullName })
+
+Compress-Archive -LiteralPath $fullArchiveItems -DestinationPath (Join-Path $Dist "NJFU-LaTeX-Template-$Version.zip") -Force
+Compress-Archive -LiteralPath $overleafArchiveItems -DestinationPath (Join-Path $Dist "njfu-course-paper-$Version-overleaf.zip") -Force
 
 Remove-Item -Recurse -Force $Stage
 
