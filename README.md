@@ -12,6 +12,8 @@
 
 详细步骤见 [5 分钟开始写作](docs/student-quickstart.md)。提交前请先看 [适用范围](docs/format-scope.md)。
 
+不知道该改哪个文件时，看 [模板文件地图](docs/template-map.md)。需要插入图片、表格、公式或参考文献时，看 [写作配方](docs/writing-recipes.md)。
+
 <p align="center">
   <img src="docs/preview.png" alt="Preview" width="65%">
 </p>
@@ -160,6 +162,8 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 ## 文档
 
 - [5 分钟开始写作](docs/student-quickstart.md)
+- [模板文件地图](docs/template-map.md)
+- [写作配方](docs/writing-recipes.md)
 - [适用范围](docs/format-scope.md)
 - [提交前格式检查](docs/format-checklist.md)
 - [使用手册](docs/manual.md)

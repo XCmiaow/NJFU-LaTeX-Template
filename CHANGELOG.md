@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v2.1.0 - 2026-05-25
+
+- Add a template file map for beginners who do not know which file to edit.
+- Add writing recipes for sections, citations, figures, tables, equations, code, blind review, and pre-submit cleanup.
+- Expand the Overleaf package README with file mapping, common recipes, and a pre-submit checklist.
+- Link beginner docs from the root README, quickstart, manual, and troubleshooting guide.
+
 ## v2.0.0 - 2026-05-25
 
 - Fix release packaging on Linux so the full source zip includes dot-directories such as `.github/`.

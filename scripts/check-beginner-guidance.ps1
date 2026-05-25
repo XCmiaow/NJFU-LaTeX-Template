@@ -80,6 +80,8 @@ $beginnerDocs = @(
   'docs/manual.md',
   'docs/faq.md',
   'docs/troubleshooting.md',
+  'docs/template-map.md',
+  'docs/writing-recipes.md',
   'templates/njfu-course-paper/README.md'
 )
 
@@ -87,27 +89,39 @@ foreach ($doc in $beginnerDocs) {
   Test-Contains $doc 'paper-info.tex'
   Test-Contains $doc 'sections/paper.tex'
   Test-DoesNotContain $doc 'sections/1-example.tex'
-  Test-DoesNotContain $doc '修改 `main.tex` 中的个人信息'
-  Test-DoesNotContain $doc '修改 `main.tex` 顶部'
-  Test-DoesNotContain $doc '只修改 `main.tex`'
 }
 
-$oldGuidanceDocs = @(
-  'README.md',
-  'docs/student-quickstart.md',
-  'docs/manual.md',
-  'docs/faq.md',
-  'docs/troubleshooting.md',
-  'docs/format-checklist.md',
-  'templates/njfu-course-paper/README.md'
-)
+foreach ($doc in @('README.md', 'docs/student-quickstart.md', 'docs/manual.md', 'docs/troubleshooting.md')) {
+  Test-Contains $doc 'template-map.md'
+  Test-Contains $doc 'writing-recipes.md'
+}
 
-foreach ($doc in $oldGuidanceDocs) {
-  Test-DoesNotContain $doc '在 `main.tex` 打开 `\blindreviewtrue`'
+$overleafReadme = 'templates/njfu-course-paper/README.md'
+foreach ($requiredText in @(
+  'paper-info.tex',
+  'cite',
+  'includegraphics',
+  'table',
+  'equation',
+  'blindreviewtrue',
+  'XeLaTeX'
+)) {
+  Test-Contains $overleafReadme $requiredText
+}
+
+foreach ($requiredText in @(
+  'paper-info.tex',
+  'frontmatter/abstract.tex',
+  'sections/paper.tex',
+  'reference.bib',
+  'figures/'
+)) {
+  Test-Contains 'docs/template-map.md' $requiredText
+  Test-Contains 'docs/writing-recipes.md' $requiredText
 }
 
 if ($failed) {
   exit 1
 }
 
-Write-Host 'Beginner guidance points users to paper-info.tex and sections/paper.tex.'
+Write-Host 'Beginner guidance points users to paper-info.tex, sections/paper.tex, and writing recipes.'
