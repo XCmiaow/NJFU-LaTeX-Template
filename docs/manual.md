@@ -16,7 +16,7 @@
 2. 下载最新版本中的 `njfu-course-paper-*-overleaf.zip`。
 3. 在 Overleaf 选择 **New Project -> Upload Project** 上传 zip。
 4. 在 **Menu -> Compiler** 中选择 **XeLaTeX**。
-5. 修改 `main.tex` 顶部的基本信息。
+5. 修改 `paper-info.tex` 中的基本信息。
 
 熟悉本地环境的用户可以使用 TeX Live 或 MiKTeX：
 
@@ -36,7 +36,8 @@ Windows PowerShell 可在仓库根目录运行：
 
 | 文件 | 用途 |
 | --- | --- |
-| `main.tex` | 设置论文题目、课程名、姓名、学号等基本信息，并组织全文结构 |
+| `paper-info.tex` | 设置论文题目、课程名、姓名、学号等基本信息 |
+| `main.tex` | 组织全文结构，普通用户一般不用修改 |
 | `frontmatter/abstract.tex` | 修改中文摘要和英文摘要 |
 | `sections/*.tex` | 撰写正文 |
 | `reference.bib` | 管理参考文献 |
@@ -51,11 +52,11 @@ Windows PowerShell 可在仓库根目录运行：
 
 目录默认使用居中标题、点线引导和右对齐页码。一级标题会加粗显示，二级和三级标题按层级缩进。
 
-普通用户通常只需要修改 `main.tex` 中的基本信息和 `sections/` 中的正文内容，不需要直接修改 `frontmatter/cover.tex` 或 `NJFUReport.sty`。
+普通用户通常只需要修改 `paper-info.tex` 中的基本信息和 `sections/paper.tex` 中的正文内容，不需要直接修改 `main.tex`、`frontmatter/cover.tex` 或 `NJFUReport.sty`。
 
 ## 正文结构
 
-正文按章节拆分到 `sections/` 目录，并在 `main.tex` 中引入：
+标准课程论文模板默认把正文放在 `sections/paper.tex`。如果你熟悉 LaTeX，也可以把正文按章节拆分到 `sections/` 目录，并在 `main.tex` 中引入：
 
 ```latex
 \input{sections/1-introduction}
@@ -132,7 +133,7 @@ latexmk -xelatex main.tex
 
 ## 盲审模式
 
-如需隐藏姓名、学号、授课教师，可在 `main.tex` 中取消注释：
+如需隐藏姓名、学号、授课教师，可在 `paper-info.tex` 中取消注释：
 
 ```latex
 \blindreviewtrue

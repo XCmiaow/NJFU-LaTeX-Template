@@ -9,20 +9,20 @@
 3. 打开 [Overleaf](https://www.overleaf.com/)，选择 **New Project -> Upload Project**。
 4. 上传刚下载的 zip。
 5. 在 Overleaf 左上角 **Menu -> Compiler** 里选择 **XeLaTeX**。
-6. 先看项目里的 `README.md`，再打开 `main.tex`。
-7. 只修改 `main.tex` 顶部“只改这里”区域。
-8. 打开 `sections/1-example.tex`，把示例文字替换成自己的正文。
+6. 先看项目里的 `README.md`，再打开 `paper-info.tex`。
+7. 只修改 `paper-info.tex` 里的题目、课程、姓名等信息。
+8. 打开 `sections/paper.tex`，把示例文字替换成自己的正文。
 
 ## 你通常只需要改这些文件
 
 | 文件 | 用途 |
 | --- | --- |
-| `main.tex` | 改题目、课程、学院、姓名、学号、老师 |
+| `paper-info.tex` | 改题目、课程、学院、姓名、学号、老师 |
 | `frontmatter/abstract.tex` | 改摘要和关键词 |
-| `sections/1-example.tex` | 写正文 |
+| `sections/paper.tex` | 写正文 |
 | `reference.bib` | 放参考文献 |
 
-不要修改 `NJFUReport.sty`，除非老师明确要求改页边距、字体或标题格式。
+不要修改 `main.tex` 和 `NJFUReport.sty`，除非老师明确要求改结构、页边距、字体或标题格式。
 
 ## 插入常用内容
 

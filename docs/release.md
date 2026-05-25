@@ -26,6 +26,7 @@
 ```powershell
 .\scripts\check-style-sync.ps1
 .\scripts\check-template-structure.ps1
+.\scripts\check-beginner-guidance.ps1
 .\Compile.ps1 all
 .\Compile.ps1 clean
 ```
@@ -49,7 +50,7 @@
 - `dist/` 中不是 4 个发布资产。
 - 完整源码包缺少 README、LICENSE、核心脚本、示例、模板目录等关键文件。
 - zip 里夹带 `main.pdf`、`.aux`、`.log` 等编译产物。
-- Overleaf zip 缺少 `main.tex`、`NJFUReport.sty`、`reference.bib`、`frontmatter/`、`sections/`、`settings/`、`figures/`。
+- Overleaf zip 缺少 `main.tex`、`paper-info.tex`、`NJFUReport.sty`、`reference.bib`、`frontmatter/`、`sections/`、`settings/`、`figures/`。
 - Overleaf zip 夹带 `.git`、`dist`、多余 PDF 或其他不该给普通用户看的文件。
 
 校验通过后，脚本会打印 release manifest 和 Overleaf zip 文件列表。发布前人工确认一次：普通用户下载的 `*-overleaf.zip` 里只应该看到论文源码、摘要/封面、正文、设置和图片。
@@ -58,8 +59,13 @@
 
 ```powershell
 git status --short
-git tag -a vX.Y.Z -m "Release vX.Y.Z"
 git push origin main
+```
+
+确认 GitHub Actions 在 `main` 上通过后再打 tag：
+
+```powershell
+git tag -a vX.Y.Z -m "Release vX.Y.Z"
 git push origin vX.Y.Z
 ```
 
@@ -70,6 +76,7 @@ Release 说明建议包含：
 - 这个版本解决了什么。
 - 普通用户应该下载哪个文件。
 - Overleaf 编译器必须选择 XeLaTeX。
+- Major 版本需要写清楚不兼容变更和迁移方式。
 
 可以直接复制 [Release 说明模板](release-notes-template.md) 再替换版本号和更新点。
 

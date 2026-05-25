@@ -2,7 +2,16 @@
 
 ## Unreleased
 
+## v2.0.0 - 2026-05-25
+
 - Fix release packaging on Linux so the full source zip includes dot-directories such as `.github/`.
+- Start v2.0.0 course paper interface changes by moving beginner metadata to `paper-info.tex`.
+- Rename the course paper starter body file to `sections/paper.tex`.
+- Add a v2.0.0 migration guide for users upgrading from v1.x Overleaf packages.
+- Update template structure and release asset checks for the v2 Overleaf package manifest.
+- Add a CI check that keeps beginner-facing docs pointed at `paper-info.tex` and `sections/paper.tex`.
+- Add a v2.0.0 release notes draft and update the release runbook for major-version migrations.
+- Expand FAQ and troubleshooting around the new beginner edit files.
 
 ## v1.2.0 - 2026-05-25
 

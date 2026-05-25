@@ -31,7 +31,7 @@
 - **example.pdf** — 编译好的示例文档，下载前预览效果
 - 一份完整的示例论文（[main.tex](main.tex)），展示模板的全部特性
 
-> 📖 想看看效果？直接下载根目录的 [example.pdf](example.pdf)，7 页全特性演示。
+> 📖 想看看效果？直接下载根目录的 [example.pdf](example.pdf) 预览完整示例。
 
 ## 目录结构
 
@@ -82,7 +82,7 @@
 1. 下载 [Overleaf 模板包](https://github.com/XCmiaow/NJFU-LaTeX-Template/releases)（`*-overleaf.zip`）
 2. 打开 [Overleaf](https://www.overleaf.com/)，**New Project → Upload Project**，选择 zip 文件
 3. 在 Overleaf 的 **Menu → Compiler** 中选择 **XeLaTeX**
-4. 修改 `main.tex` 中的个人信息，开始写作
+4. 修改 `paper-info.tex` 中的个人信息，开始写作
 
 完整源码包和示例 PDF 可在 [Releases](https://github.com/XCmiaow/NJFU-LaTeX-Template/releases) 下载。
 
@@ -93,7 +93,7 @@
 cp -r templates/njfu-course-paper /path/to/my-paper
 cd /path/to/my-paper
 
-# 修改 main.tex 中的个人信息 → 在 sections/ 中写正文 → 编译
+# 修改 paper-info.tex 中的个人信息 → 在 sections/paper.tex 写正文 → 编译
 latexmk -xelatex main.tex
 ```
 
@@ -122,7 +122,7 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 | 特性 | 说明 |
 | --- | --- |
 | **模块化架构** | 样式（`.sty`）与内容（`.tex`）完全分离 |
-| **封面自动生成** | 修改 `main.tex` 基本信息即可 |
+| **封面自动生成** | 修改 `paper-info.tex` 基本信息即可 |
 | **中文适配** | 宋体正文、黑体标题、楷体封面、仿宋页眉 |
 | **盲审模式** | `\blindreviewtrue` 一键隐藏姓名、学号、教师 |
 | **中英文摘要** | 内置 `abstract` 和 `enabstract` 环境 |
@@ -140,7 +140,7 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 
 ## 盲审模式
 
-在 `main.tex` 基本信息区取消注释：
+在 `paper-info.tex` 中取消注释：
 
 ```latex
 \blindreviewtrue
@@ -167,6 +167,7 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 - [故障排查](docs/troubleshooting.md)
 - [发布流程](docs/release.md)
 - [Release 说明模板](docs/release-notes-template.md)
+- [v2 迁移指南](docs/migration-v2.md)
 - [开发路线图](docs/roadmap.md)
 
 ## 维护说明

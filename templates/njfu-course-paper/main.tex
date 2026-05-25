@@ -3,9 +3,9 @@
 % NJFU 课程论文模板
 %
 % 第一次使用：
-%   1. 只修改下面“只改这里”区域
+%   1. 在 paper-info.tex 填写题目、姓名、课程等信息
 %   2. 在 frontmatter/abstract.tex 写摘要
-%   3. 在 sections/1-example.tex 写正文
+%   3. 在 sections/paper.tex 写正文
 %   4. 在 reference.bib 添加参考文献
 %   5. Overleaf 编译器选择 XeLaTeX
 
@@ -14,23 +14,7 @@
 \usepackage{enumitem}
 
 \input{settings/commands}
-
-% ==================== 只改这里 ====================
-% 把右侧花括号里的示例文字替换成自己的信息。
-% 盲审提交时，删除下一行最前面的两个百分号。
-% % \blindreviewtrue
-
-\newcommand{\papertitle}{课程论文题目}
-\newcommand{\coursename}{课程名称}
-\newcommand{\collegename}{学院名称}
-\newcommand{\majorname}{专业名称}
-\newcommand{\studentid}{学号}
-\newcommand{\authorname}{姓名}
-\newcommand{\teachername}{授课教师姓名}
-
-% 页眉默认显示课程名称，一般不用改。
-\renewcommand{\reportheader}{\coursename}
-% ================== 只改这里结束 ==================
+\input{paper-info}
 
 \begin{document}
 
@@ -44,7 +28,7 @@
 \input{frontmatter/abstract}
 \newpage
 
-\input{sections/1-example}
+\input{sections/paper}
 
 \reference
 

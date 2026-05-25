@@ -5,19 +5,19 @@
 ## 先做这 3 步
 
 1. 在 Overleaf 左上角 **Menu -> Compiler** 里选择 **XeLaTeX**。
-2. 打开 `main.tex`，只修改顶部“只改这里”区域。
-3. 打开 `sections/1-example.tex`，把示例内容替换成自己的正文。
+2. 打开 `paper-info.tex`，填写题目、课程、姓名等信息。
+3. 打开 `sections/paper.tex`，把示例内容替换成自己的正文。
 
 ## 你通常只需要改这些文件
 
 | 文件 | 用途 |
 | --- | --- |
-| `main.tex` | 改题目、课程、学院、专业、学号、姓名、老师 |
+| `paper-info.tex` | 改题目、课程、学院、专业、学号、姓名、老师 |
 | `frontmatter/abstract.tex` | 改摘要和关键词 |
-| `sections/1-example.tex` | 写正文 |
+| `sections/paper.tex` | 写正文 |
 | `reference.bib` | 添加参考文献 |
 
-不熟悉 LaTeX 时，不建议修改 `NJFUReport.sty`。
+不熟悉 LaTeX 时，不建议修改 `main.tex` 和 `NJFUReport.sty`。
 
 ## 正文怎么写
 

@@ -23,6 +23,10 @@ jobs:
         shell: pwsh
         run: ./scripts/check-template-structure.ps1
 
+      - name: Check beginner guidance
+        shell: pwsh
+        run: ./scripts/check-beginner-guidance.ps1
+
       - name: Install TeX Live
         run: |
           sudo apt-get update

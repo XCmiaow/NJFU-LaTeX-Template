@@ -167,19 +167,23 @@ $fullSourceFiles = @(
   '.github/workflows/build.yml',
   'docs/format-checklist.md',
   'docs/format-scope.md',
+  'docs/migration-v2.md',
   'docs/release.md',
   'docs/release-notes-template.md',
+  'docs/release-notes-v2.0.0.md',
   'docs/roadmap.md',
   'docs/student-quickstart.md',
   'frontmatter/abstract.tex',
   'frontmatter/cover.tex',
   'sections/1-introduction.tex',
   'settings/commands.tex',
+  'scripts/check-beginner-guidance.ps1',
   'scripts/check-release-assets.ps1',
   'scripts/check-style-sync.ps1',
   'scripts/check-template-structure.ps1',
   'scripts/package-release.ps1',
   'templates/njfu-course-paper/main.tex',
+  'templates/njfu-course-paper/paper-info.tex',
   'templates/njfu-course-paper/NJFUReport.sty',
   'templates/njfu-course-paper/reference.bib',
   'templates/njfu-course-paper/README.md',
@@ -190,12 +194,13 @@ $fullSourceFiles = @(
 )
 $overleafFiles = @(
   'main.tex',
+  'paper-info.tex',
   'NJFUReport.sty',
   'reference.bib',
   'README.md',
   'frontmatter/abstract.tex',
   'frontmatter/cover.tex',
-  'sections/1-example.tex',
+  'sections/paper.tex',
   'settings/commands.tex'
 )
 
@@ -238,7 +243,7 @@ $overleafAllowedEntries = @($overleafFiles + $overleafFigureEntries)
 Test-ZipExactEntries -Entries $overleafEntries -Allowed $overleafAllowedEntries -ZipLabel 'Overleaf zip'
 
 $overleafReadme = Get-ZipEntryText -ZipPath $overleafZip -EntryName 'README.md'
-foreach ($requiredText in @('XeLaTeX', 'main.tex', 'sections/1-example.tex', 'reference.bib')) {
+foreach ($requiredText in @('XeLaTeX', 'paper-info.tex', 'sections/paper.tex', 'reference.bib')) {
   if (-not $overleafReadme -or -not $overleafReadme.Contains($requiredText)) {
     Write-Error "Overleaf README is missing beginner guidance text: $requiredText"
     exit 1

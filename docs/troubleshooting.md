@@ -14,6 +14,10 @@
 
 确认 Menu 中的 Compiler 选择 XeLaTeX，并使用较新的 TeX Live 版本。
 
+## 找不到要改的文件
+
+v2.0.0 之后，题目、课程、姓名等信息在 `paper-info.tex`，正文在 `sections/paper.tex`。如果你的项目仍使用旧版正文文件名，说明你使用的是 v1.x 模板包，可继续使用旧结构，也可以按 [v2 迁移指南](migration-v2.md) 迁移。
+
 ## 参考文献不显示
 
 确认正文中有 `\cite{sample2024}` 这样的引用命令，并且 `reference.bib` 里有同名条目。Overleaf 通常会自动多轮编译，本地编译推荐使用 `latexmk -xelatex main.tex`。

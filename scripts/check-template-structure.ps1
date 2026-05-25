@@ -6,12 +6,13 @@ $Root = Resolve-Path (Join-Path $PSScriptRoot '..')
 $templates = @{
   'templates/njfu-course-paper' = @(
     'main.tex',
+    'paper-info.tex',
     'NJFUReport.sty',
     'reference.bib',
     'README.md',
     'frontmatter/abstract.tex',
     'frontmatter/cover.tex',
-    'sections/1-example.tex',
+    'sections/paper.tex',
     'settings/commands.tex'
   )
   'templates/personal-quickstart' = @(
