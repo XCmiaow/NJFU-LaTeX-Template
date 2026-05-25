@@ -1,93 +1,64 @@
-# NJFU 课程论文 LaTeX 模板
+# NJFU 课程论文模板
 
-南京林业大学课程论文 LaTeX 模板，基于 ctexart + XeLaTeX。
+这份模板给第一次使用 LaTeX 的同学。推荐直接在 Overleaf 使用。
 
-## 特性
+## 先做这 3 步
 
-- **模块化结构**：主控文件仅 ~30 行，正文按章节拆分
-- **格式与内容分离**：样式（NJFUReport.sty）独立，自定义命令集中管理
-- **封面自动生成**：修改 `main.tex` 中基本信息即可
-- **中文适配**：Windows 默认宋体/黑体，其他系统自动尝试 Noto CJK / Fandol
-- **参考文献**：BibTeX 管理
+1. 在 Overleaf 左上角 **Menu -> Compiler** 里选择 **XeLaTeX**。
+2. 打开 `main.tex`，只修改顶部“只改这里”区域。
+3. 打开 `sections/1-example.tex`，把示例内容替换成自己的正文。
 
-## 目录结构
+## 你通常只需要改这些文件
 
-```text
-├── main.tex                 主控文件
-├── NJFUReport.sty           模板样式（宏包、字体、页眉）
-├── reference.bib            参考文献
-├── settings/
-│   └── commands.tex         自定义命令
-├── frontmatter/
-│   ├── cover.tex            封面
-│   └── abstract.tex         摘要
-├── sections/                正文章节
-└── figures/                 图片
+| 文件 | 用途 |
+| --- | --- |
+| `main.tex` | 改题目、课程、学院、专业、学号、姓名、老师 |
+| `frontmatter/abstract.tex` | 改摘要和关键词 |
+| `sections/1-example.tex` | 写正文 |
+| `reference.bib` | 添加参考文献 |
+
+不熟悉 LaTeX 时，不建议修改 `NJFUReport.sty`。
+
+## 正文怎么写
+
+章节标题：
+
+```latex
+\section{引言}
+\subsection{研究背景}
+这里写正文。
 ```
 
-## 前置条件
+引用参考文献：
 
-- TeX Live 2024+ 或 MiKTeX
-- 中文字体：Windows 可直接使用，macOS/Linux 推荐安装 Noto CJK
-
-## 快速开始
-
-### 1. 修改个人信息
-
-编辑 `main.tex` 顶部「基本信息」区块。
-
-### 2. 撰写正文
-
-- 在 `sections/` 下创建 `.tex` 文件
-- 在 `main.tex` 中用 `\input{sections/你的文件名}` 引入
-- 在 `reference.bib` 中添加参考文献
-
-### 3. 编译
-
-```bash
-latexmk -xelatex main.tex
+```latex
+这里引用一篇文献\cite{sample2024}。
 ```
 
-如果从完整仓库根目录使用，也可以运行：
+参考文献条目写在 `reference.bib` 里，正文中的 `sample2024` 要和 `reference.bib` 里的 key 一致。
 
-```bash
-make template
+## 图片怎么放
+
+1. 把图片上传到 `figures/` 文件夹。
+2. 在正文中使用下面的代码。
+3. 把 `your-image` 改成你的图片文件名，不写扩展名也可以。
+
+```latex
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/your-image}
+    \caption{图片标题}
+    \label{fig:your-image}
+\end{figure}
 ```
 
-Windows PowerShell：
+图片文件名尽量使用英文、数字、短横线，不要带空格。
 
-```powershell
-.\Compile.ps1 template
-```
+## 编译失败先检查
 
-或手动四步：
+- Compiler 是否选择 **XeLaTeX**。
+- 是否误删了 `NJFUReport.sty`、`frontmatter/`、`sections/`、`settings/`。
+- `\cite{...}` 里的 key 是否能在 `reference.bib` 找到。
+- 图片是否真的在 `figures/` 文件夹里。
 
-```bash
-xelatex main.tex
-bibtex main
-xelatex main.tex
-xelatex main.tex
-```
-
-## VSCode 配置
-
-安装 [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) 扩展后，创建 `.vscode/settings.json`：
-
-```json
-{
-    "latex-workshop.latex.recipe": [
-        {
-            "name": "xelatex -> bibtex -> xelatex * 2",
-            "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
-        }
-    ]
-}
-```
-
-## 更多文档
-
-完整仓库包含 FAQ、故障排查和发布流程文档，路径为 `docs/`。
-
-## License
-
-MIT
+本项目不是学校官方模板。老师或学院有特殊格式要求时，以老师或学院要求为准。

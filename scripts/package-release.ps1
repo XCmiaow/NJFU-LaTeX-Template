@@ -19,7 +19,9 @@ Get-ChildItem $Root -Force | Where-Object { $exclude -notcontains $_.Name } | Fo
   Copy-Item $_.FullName -Destination $FullDir -Recurse -Force
 }
 
-Copy-Item (Join-Path $Root 'templates/njfu-course-paper/*') -Destination $OverleafDir -Recurse -Force
+Get-ChildItem (Join-Path $Root 'templates/njfu-course-paper') -Force |
+  Where-Object { $_.Name -ne '.gitignore' } |
+  ForEach-Object { Copy-Item $_.FullName -Destination $OverleafDir -Recurse -Force }
 
 Push-Location $FullDir
 try {

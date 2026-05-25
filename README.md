@@ -6,6 +6,12 @@
 
 南林课程论文 LaTeX 模板，基于 `ctexart` + **XeLaTeX** 编译。
 
+## 普通同学下载
+
+第一次使用请下载 [最新 Release](https://github.com/XCmiaow/NJFU-LaTeX-Template/releases/latest) 里的 `njfu-course-paper-*-overleaf.zip`，上传到 Overleaf 后把编译器设为 **XeLaTeX**。
+
+详细步骤见 [5 分钟开始写作](docs/student-quickstart.md)。提交前请先看 [适用范围](docs/format-scope.md)。
+
 <p align="center">
   <img src="docs/preview.png" alt="Preview" width="65%">
 </p>
@@ -153,15 +159,21 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 
 ## 文档
 
+- [5 分钟开始写作](docs/student-quickstart.md)
+- [适用范围](docs/format-scope.md)
+- [提交前格式检查](docs/format-checklist.md)
 - [使用手册](docs/manual.md)
 - [FAQ](docs/faq.md)
 - [故障排查](docs/troubleshooting.md)
 - [发布流程](docs/release.md)
+- [Release 说明模板](docs/release-notes-template.md)
 - [开发路线图](docs/roadmap.md)
 
 ## 维护说明
 
 `templates/*/NJFUReport.sty` 会保留为独立副本，目的是让每个模板目录都能单独上传到 Overleaf。修改根目录 `NJFUReport.sty` 后，需要同步更新模板目录里的副本。
+
+发布前请运行 `scripts/check-style-sync.ps1` 和 `scripts/check-template-structure.ps1`。前者检查样式副本同步，后者检查模板目录是否缺少必要文件、是否误带 `main.pdf`、`.aux`、`.log` 等编译产物。
 
 ## 贡献
 

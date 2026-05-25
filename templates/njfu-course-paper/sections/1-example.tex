@@ -1,180 +1,82 @@
 % !TEX root = ../main.tex
 %
-% 示例章节：演示模板全部特性
+% 写作提示：
+%   1. 保留 \section 和 \subsection，替换里面的示例文字即可
+%   2. 不需要的图、表、公式、代码块可以直接删除
+%   3. 参考文献条目写在 reference.bib，正文用 \cite{文献key} 引用
 %
 
 \section{引言}
 
-\subsection{基本文字}
+这里写课程论文的研究背景、问题来源和写作目的。可以先用一两段说明为什么这个主题值得讨论，再引用相关文献作为支撑\cite{sample2024}。
 
-这里是正文内容。你可以在这里开始撰写论文\cite{sample2024}。
+本文围绕“你的论文主题”展开，主要分析以下问题：第一，说明研究对象的基本情况；第二，整理已有资料或课程知识；第三，结合案例、数据或计算结果给出自己的分析。
 
-本文用到的模板特性包括：公式排版、三线表、算法伪代码、定理环境、代码高亮、子图排列等。交叉引用请用 \verb|\autoref|，如 \autoref{tab:sample}、\autoref{fig:sidebyside}、\autoref{eq:energy}。
+\section{研究对象与方法}
 
-\subsection{数学公式}
+\subsection{研究对象}
 
-行内公式 $E = mc^2$，独立公式如 \autoref{eq:energy}：
+这里介绍论文讨论的对象、案例、实验材料或课程设计任务。写作时尽量交代清楚时间、地点、数据来源和基本范围。
 
-\begin{equation}
-    \frac{\partial u}{\partial t} = \alpha \nabla^2 u \label{eq:energy}
-\end{equation}
+\subsection{分析方法}
 
-多行对齐：
-
-\begin{align}
-    \dot{x} & = \sigma(y - x) \\
-    \dot{y} & = \rho x - y - xz \\
-    \dot{z} & = -\beta z + xy
-\end{align}
-
-约束条件块（empheq）：
-
-\begin{empheq}[left=\empheqlbrace]{flalign}
-    & \sum_{j=1}^{n} a_{ij} x_j \leq b_i, \quad i = 1,\dots,m \\
-    & x_j \geq 0, \quad j = 1,\dots,n
-\end{empheq}
-
-数学算子 \verb|\arcsinh|、\verb|\argmin|、\verb|\sgn|：
+这里说明你使用的分析方法。若论文中需要公式，可以使用 \autoref{eq:sample-model} 这样的编号引用。
 
 \begin{equation}
-    \hat{\theta} = \argmin_{\theta} \sum_{i=1}^{n} \|y_i - f_\theta(x_i)\|^2
+    S = \frac{x_1 + x_2 + x_3}{3}
+    \label{eq:sample-model}
 \end{equation}
 
-\subsection{定理环境}
+式中，$S$ 表示综合得分，$x_1$、$x_2$、$x_3$ 分别表示三个评价指标。请根据自己的课程内容替换变量含义。
 
-\begin{Theorem}[均值不等式]
-    对于任意非负实数 $a_1, a_2, \dots, a_n$，有
-    \begin{equation}
-        \frac{a_1 + a_2 + \cdots + a_n}{n} \geq \sqrt[n]{a_1 a_2 \cdots a_n}
-    \end{equation}
-\end{Theorem}
+\section{结果与分析}
 
-\begin{Lemma}
-    若 $f$ 在 $[a,b]$ 上连续，则 $f$ 在 $[a,b]$ 上有界。
-\end{Lemma}
+\subsection{主要结果}
 
-\begin{Definition}
-    设 $X$ 是一个非空集合，$\mathcal{T}$ 是 $X$ 的子集族，若 $\mathcal{T}$ 满足……
-\end{Definition}
-
-\section{表格}
-
-\autoref{tab:sample} 为三线表示例，使用预定义的 \verb|C|（居中）、\verb|L|（左对齐）、\verb|R|（右对齐）列类型。
+结果部分可以先用文字概括，再放表格或图片。表格建议使用三线表，如 \autoref{tab:sample-result}。
 
 \begin{table}[htbp]
     \centering
-    \caption{三线表示例}
-    \label{tab:sample}
+    \caption{示例评价结果}
+    \label{tab:sample-result}
     \begin{tabularx}{0.8\textwidth}{lCCC}
         \toprule
-        方法 & 准确率 & 召回率 & F1 值 \\
+        对象 & 指标一 & 指标二 & 综合得分 \\
         \midrule
-        SVM      & 92.34\% & 91.02\% & 91.68\% \\
-        随机森林 & 94.56\% & 93.78\% & 94.17\% \\
-        CNN      & \textbf{96.12\%} & \textbf{95.45\%} & \textbf{95.78\%} \\
+        样本 A & 82.5 & 78.0 & 80.3 \\
+        样本 B & 91.0 & 85.5 & 88.2 \\
+        样本 C & 76.5 & 80.0 & 78.3 \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
-斜线表头（diagbox）：
-
-\begin{table}[htbp]
-    \centering
-    \caption{斜线表示例}
-    \label{tab:diag}
-    \begin{tabular}{|l|c|c|}
-        \hline
-        \diagbox{结果}{输入} & 正类 & 负类 \\
-        \hline
-        预测为正 & TP & FP \\
-        预测为负 & FN & TN \\
-        \hline
-    \end{tabular}
-\end{table}
-
-\section{算法伪代码}
-
-\begin{algorithm}[htbp]
-    \caption{梯度下降法}
-    \label{alg:gd}
-    \KwInput{学习率 $\eta$，迭代轮数 $T$，初始参数 $\theta_0$}
-    \KwOutput{最优参数 $\theta^*$}
-    $t \gets 0$\;
-    \While{$t < T$}{
-        计算梯度 $g_t = \nabla L(\theta_t)$\;
-        更新参数 $\theta_{t+1} \gets \theta_t - \eta g_t$\;
-        $t \gets t + 1$\;
-    }
-    \Return{$\theta_T$}
-\end{algorithm}
-
-\section{图片与子图}
-
-使用 subcaption 宏包排布子图（\autoref{fig:sidebyside}）：
+如果需要插入图片，把图片文件放进 \verb|figures/| 文件夹，然后取消下面代码中的注释并修改文件名。
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        % \includegraphics[width=\textwidth]{figures/example-a}
-        \caption{子图 A}
-        \label{fig:suba}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        % \includegraphics[width=\textwidth]{figures/example-b}
-        \caption{子图 B}
-        \label{fig:subb}
-    \end{subfigure}
-    \caption{并排子图示例}
-    \label{fig:sidebyside}
+    % \includegraphics[width=0.7\textwidth]{figures/your-image}
+    \caption{示例图片标题}
+    \label{fig:sample-image}
 \end{figure}
 
-\section{代码高亮}
+\subsection{过程说明}
 
-\begin{lstlisting}[language=Python, caption=Python 代码示例]
-import numpy as np
+如果课程论文需要展示计算过程、实验步骤或程序片段，可以使用代码块。代码不是必需内容，不需要时删掉即可。
 
-def softmax(x):
-    """Compute softmax values for each row."""
-    e_x = np.exp(x - np.max(x, axis=1, keepdims=True))
-    return e_x / e_x.sum(axis=1, keepdims=True)
+\begin{lstlisting}[language=Python, caption=示例代码片段]
+scores = [82.5, 91.0, 76.5]
+average = sum(scores) / len(scores)
+print(average)
 \end{lstlisting}
 
-\section{TikZ 绘图与带圈数字}
+\section{讨论}
 
-带圈数字（pifont + tikz）：
+这里写你对结果的解释。可以讨论结果是否符合预期，和课程理论或参考文献有什么关系，还可以说明数据、方法或案例的局限。
 
-\ding{172} \ding{173} \ding{174} \ding{175} \ding{176} \quad
-\circled{1} \circled{2} \circled{3} \circled{4} \circled{5}
+写讨论时不要只重复表格数字，更重要的是解释“为什么会这样”和“这个结果说明了什么”。
 
-TikZ 示意图：
+\section{结论}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-    \draw[->] (-0.5,0) -- (4,0) node[right] {$x$};
-    \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
-    \draw[domain=0:3.5, smooth, thick] plot (\x, {0.5*\x + 0.5});
-    \node[above] at (2,1.5) {$y = \frac{1}{2}x + \frac{1}{2}$};
-\end{tikzpicture}
-\end{center}
+结论部分建议用一段或几条短句总结全文。可以回答引言中提出的问题，并说明本论文的主要发现。
 
-\section{列表}
-
-有序列表：
-
-\begin{enumerate}[label=\arabic*.]
-    \item 数据预处理
-    \item 特征提取
-    \item 模型训练
-    \item 结果评估
-\end{enumerate}
-
-自定义标签列表：
-
-\begin{enumerate}[label=\textbf{Step \arabic*:}, leftmargin=*]
-    \item 加载数据集
-    \item 划分训练集和测试集
-    \item 训练分类器
-\end{enumerate}
+例如：本文基于某课程主题完成了资料整理、结果分析和讨论，得到以下认识：第一，……；第二，……；第三，……。
