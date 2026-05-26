@@ -80,6 +80,8 @@ $beginnerDocs = @(
   'docs/manual.md',
   'docs/faq.md',
   'docs/troubleshooting.md',
+  'docs/overleaf-step-by-step.md',
+  'docs/first-paper-walkthrough.md',
   'docs/template-map.md',
   'docs/writing-recipes.md',
   'templates/njfu-course-paper/README.md'
@@ -96,9 +98,17 @@ foreach ($doc in @('README.md', 'docs/student-quickstart.md', 'docs/manual.md', 
   Test-Contains $doc 'writing-recipes.md'
 }
 
+foreach ($doc in @('README.md', 'docs/student-quickstart.md', 'docs/manual.md', 'docs/troubleshooting.md')) {
+  Test-Contains $doc 'overleaf-step-by-step.md'
+  Test-Contains $doc 'first-paper-walkthrough.md'
+}
+
 $overleafReadme = 'templates/njfu-course-paper/README.md'
 foreach ($requiredText in @(
   'paper-info.tex',
+  'frontmatter/abstract.tex',
+  'sections/paper.tex',
+  'reference.bib',
   'cite',
   'includegraphics',
   'table',

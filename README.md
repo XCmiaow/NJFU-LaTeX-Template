@@ -10,9 +10,9 @@
 
 第一次使用请下载 [最新 Release](https://github.com/XCmiaow/NJFU-LaTeX-Template/releases/latest) 里的 `njfu-course-paper-*-overleaf.zip`，上传到 Overleaf 后把编译器设为 **XeLaTeX**。
 
-详细步骤见 [5 分钟开始写作](docs/student-quickstart.md)。提交前请先看 [适用范围](docs/format-scope.md)。
+详细步骤见 [第一次使用完整流程](docs/student-quickstart.md)。完全没用过 Overleaf 时，先看 [Overleaf 手把手使用教程](docs/overleaf-step-by-step.md)。
 
-不知道该改哪个文件时，看 [模板文件地图](docs/template-map.md)。需要插入图片、表格、公式或参考文献时，看 [写作配方](docs/writing-recipes.md)。
+不知道该改哪个文件时，看 [模板文件地图](docs/template-map.md)。需要插入图片、表格、公式或参考文献时，看 [写作配方](docs/writing-recipes.md)。想看一篇示例论文怎么从模板改出来，看 [第一篇课程论文完整演示](docs/first-paper-walkthrough.md)。
 
 <p align="center">
   <img src="docs/preview.png" alt="Preview" width="65%">
@@ -161,7 +161,9 @@ xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
 
 ## 文档
 
-- [5 分钟开始写作](docs/student-quickstart.md)
+- [第一次使用完整流程](docs/student-quickstart.md)
+- [Overleaf 手把手使用教程](docs/overleaf-step-by-step.md)
+- [第一篇课程论文完整演示](docs/first-paper-walkthrough.md)
 - [模板文件地图](docs/template-map.md)
 - [写作配方](docs/writing-recipes.md)
 - [适用范围](docs/format-scope.md)

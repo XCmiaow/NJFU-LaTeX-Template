@@ -2,7 +2,7 @@
 
 先确认 Overleaf 的 Compiler 已选择 **XeLaTeX**。如果仍然失败，再按报错关键词往下找。
 
-如果不是报错，而是不知道怎么插图、表格、公式或参考文献，先看 [写作配方](writing-recipes.md)。如果不知道该改哪个文件，先看 [模板文件地图](template-map.md)。
+如果不是报错，而是不知道怎么上传 Overleaf，先看 [Overleaf 手把手使用教程](overleaf-step-by-step.md)。不知道怎么从示例改成自己的论文，先看 [第一篇课程论文完整演示](first-paper-walkthrough.md)。不知道怎么插图、表格、公式或参考文献，先看 [写作配方](writing-recipes.md)。如果不知道该改哪个文件，先看 [模板文件地图](template-map.md)。
 
 ## `algorithm2e.sty not found`
 

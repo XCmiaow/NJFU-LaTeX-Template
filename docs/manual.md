@@ -46,7 +46,7 @@ Windows PowerShell 可在仓库根目录运行：
 
 建议先从 `templates/njfu-course-paper` 开始写。这个目录是面向实际使用的最小模板，比根目录示例更干净。
 
-如果只想知道“某个任务该改哪个文件”，见 [模板文件地图](template-map.md)。如果需要复制插图、表格、公式、参考文献等常用写法，见 [写作配方](writing-recipes.md)。
+如果完全没用过 Overleaf，先看 [Overleaf 手把手使用教程](overleaf-step-by-step.md)。如果想看一篇课程论文从模板改到成稿，见 [第一篇课程论文完整演示](first-paper-walkthrough.md)。如果只想知道“某个任务该改哪个文件”，见 [模板文件地图](template-map.md)。如果需要复制插图、表格、公式、参考文献等常用写法，见 [写作配方](writing-recipes.md)。
 
 ## 封面和目录
 

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## v2.2.0 - 2026-05-26
+
+- Add an Overleaf step-by-step guide for complete beginners.
+- Add a first-paper walkthrough that demonstrates filling metadata, abstract, body, figures, and references.
+- Rewrite the student quickstart into a full first-use flow instead of a short checklist.
+- Expand the Overleaf package README with more detailed first-use instructions.
+- Extend beginner guidance checks and release validation for the new tutorial docs.
+
 ## v2.1.0 - 2026-05-25
 
 - Add a template file map for beginners who do not know which file to edit.
