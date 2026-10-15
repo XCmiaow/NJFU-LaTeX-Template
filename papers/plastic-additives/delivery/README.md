@@ -7,6 +7,7 @@
 - [论文PDF预览：21页，含个人封面](plastic-additives-paper.pdf)
 - [正文PDF预览：20页，不含封面](plastic-additives-body.pdf)
 - [完整LaTeX源码、Python绘图脚本和数据](plastic-additives-source.zip)
+- [重绘图7](figure-7.png)、[重绘图8](figure-8.png)
 
 在GitHub文件页面点击 **Download raw file**（下载图标）即可保存。源码ZIP中包含编译说明、课程格式、个人信息、矢量图、参考文献及来源核验记录。
 
@@ -20,4 +21,6 @@
 
 ## 本次修订
 
-已按用户指定的`cumcm-team-style`中相关的自然学术表达、证据与结论对应、公式解释和图表说明要求改写。课程格式与模型数据保留，未套用竞赛分问或整页摘要要求。详见[修订说明](STYLE-REVISION.md)。
+已重绘图7和图8：图7消除文字重叠，改为瀑布累加与曲线末端标注；图8改为10类添加剂占比、8个用途部门生产和废弃物流量对比，共26个文献数值。原文补充表已逐项核验，正文与图注同步更新。PDF仍为21页（含封面），正文20页。详见[图件修订说明](FIGURE-REVISION.md)。
+
+此前已按用户指定的`cumcm-team-style`中相关的自然学术表达、证据与结论对应、公式解释和图表说明要求改写，详见[文风修订说明](STYLE-REVISION.md)。其“27个文件未改”专指此前的文风修订；本次按反馈重绘两图。
